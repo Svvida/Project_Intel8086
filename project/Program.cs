@@ -8,11 +8,24 @@ namespace Simulation
             System.Console.WriteLine("Podaj wartość AH:");
 
             string AH = Console.ReadLine();
+
+
+            //Sprawdzenie długości stringa
+            while (AH.Length > 2)
+            {
+                System.Console.WriteLine("Podaj maksymalnie dwa znaku");
+                AH = Console.ReadLine();
+            }
             bool hexa = IsHex(AH);
-            System.Console.WriteLine(AH);
             System.Console.WriteLine(hexa);
 
+
+            System.Console.WriteLine("Długość stringa: " + AH.Length);
+
+            System.Console.WriteLine("Wartość AH: " + AH);
         }
+
+
         static bool IsHex(IEnumerable<char> chars)
         {
             bool isHex;
