@@ -11,13 +11,22 @@ namespace Simulation
 
 
             //Sprawdzenie długości stringa
-            while (AH.Length > 2)
+            if (AH.Length > 2)
             {
                 System.Console.WriteLine("Podaj maksymalnie dwa znaku");
                 AH = Console.ReadLine();
+
+                if (AH.Length < 2)
+                {
+                    System.Console.WriteLine("Podaj co najmniej dwa znaki");
+                    AH = Console.ReadLine();
+                }
+                AH = Console.ReadLine();
             }
+            // bool chars = IsMaxTwoChar(AH);
+            // System.Console.WriteLine("Czy liczba posiada dwie wartości: " + chars);
             bool hexa = IsHex(AH);
-            System.Console.WriteLine(hexa);
+            System.Console.WriteLine("Czy liczba jest hexa: " + hexa);
 
 
             System.Console.WriteLine("Długość stringa: " + AH.Length);
@@ -40,6 +49,17 @@ namespace Simulation
             }
             return true;
         }
+        // static bool IsMaxTwoChar(IEnumerable<char> chars)
+        // {
+        //     bool IsMaxTwoChar;
+        //     foreach (var c in chars)
+        //     {
+        //         IsMaxTwoChar = (c > '1' && c < '3');
+        //         if (!IsMaxTwoChar)
+        //             return false;
+        //     }
+        //     return true;
+        // }
     }
 
 }
